@@ -3,7 +3,7 @@ package stackarray_test
 import (
 	"testing"
 
-	stackarray "github.com/DevCyntrix/go-stack-array"
+	stackarray "github.com/DevCyntrix/go-arraystack"
 )
 
 func TestStackPushPop(t *testing.T) {
