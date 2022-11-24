@@ -25,7 +25,6 @@ func (stack *Stack) Push(value interface{}) error {
 	if stack.index >= len(stack.array) {
 		return StackIsFull
 	}
-
 	stack.array[stack.index] = value
 	stack.index++
 	return nil
@@ -33,7 +32,7 @@ func (stack *Stack) Push(value interface{}) error {
 
 // Returns the last element which were put in otherwise it returns the stack is empty error
 func (stack *Stack) Pop() (interface{}, error) {
-	if stack.index <= 0 {
+	if stack.IsEmpty() {
 		return nil, StackIsEmpty
 	}
 	stack.index--
@@ -41,9 +40,13 @@ func (stack *Stack) Pop() (interface{}, error) {
 }
 
 func (stack *Stack) Top() (interface{}, error) {
-	if stack.index <= 0 {
+	if stack.IsEmpty() {
 		return nil, StackIsEmpty
 	}
 	i := stack.index - 1
 	return stack.array[i], nil
+}
+
+func (stack *Stack) IsEmpty() bool {
+	return stack.index <= 0
 }
