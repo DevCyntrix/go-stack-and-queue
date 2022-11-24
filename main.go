@@ -32,7 +32,7 @@ func (stack *Stack) Push(value interface{}) error {
 }
 
 // Returns the last element which were put in otherwise it returns the stack is empty error
-func (stack *Stack) Pull() (interface{}, error) {
+func (stack *Stack) Pop() (interface{}, error) {
 	if stack.index <= 0 {
 		return nil, StackIsEmpty
 	}
