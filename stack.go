@@ -5,8 +5,8 @@ import (
 )
 
 var (
-	StackIsFull  = errors.New("The stack is full")
-	StackIsEmpty = errors.New("The stack is empty")
+	ErrStackIsFull  = errors.New("the stack is full")
+	ErrStackIsEmpty = errors.New("the stack is empty")
 )
 
 // LIFO (Last in First out)
@@ -23,7 +23,7 @@ func New(size int32) *Stack {
 // Pushs the element on the top of the stack, otherwise it returns the stack is full error
 func (stack *Stack) Push(value interface{}) error {
 	if stack.index >= len(stack.array) {
-		return StackIsFull
+		return ErrStackIsFull
 	}
 	stack.array[stack.index] = value
 	stack.index++
@@ -33,7 +33,7 @@ func (stack *Stack) Push(value interface{}) error {
 // Returns the last element which were put in otherwise it returns the stack is empty error
 func (stack *Stack) Pop() (interface{}, error) {
 	if stack.IsEmpty() {
-		return nil, StackIsEmpty
+		return nil, ErrStackIsEmpty
 	}
 	stack.index--
 	return stack.array[stack.index], nil
@@ -41,7 +41,7 @@ func (stack *Stack) Pop() (interface{}, error) {
 
 func (stack *Stack) Top() (interface{}, error) {
 	if stack.IsEmpty() {
-		return nil, StackIsEmpty
+		return nil, ErrStackIsEmpty
 	}
 	i := stack.index - 1
 	return stack.array[i], nil
