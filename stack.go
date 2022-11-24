@@ -39,3 +39,11 @@ func (stack *Stack) Pop() (interface{}, error) {
 	stack.index--
 	return stack.array[stack.index], nil
 }
+
+func (stack *Stack) Top() (interface{}, error) {
+	if stack.index <= 0 {
+		return nil, StackIsEmpty
+	}
+	i := stack.index - 1
+	return stack.array[i], nil
+}
