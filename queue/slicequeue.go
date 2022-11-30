@@ -5,7 +5,7 @@ type SliceQueue struct {
 	slice       []interface{}
 }
 
-func NewSliceQueue() *SliceQueue {
+func NewSliceQueue() Queue {
 	return &SliceQueue{readerIndex: 0, slice: make([]interface{}, 0)}
 }
 

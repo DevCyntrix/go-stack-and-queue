@@ -6,7 +6,7 @@ type SliceStack struct {
 }
 
 // Creates a new Stack with a dynamic size
-func NewSliceStack() *SliceStack {
+func NewSliceStack() Stack {
 	return &SliceStack{readerIndex: 0, slice: make([]interface{}, 0)} // This slice has a capacity of size
 }
 

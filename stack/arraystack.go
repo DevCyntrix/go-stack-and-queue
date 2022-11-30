@@ -7,7 +7,7 @@ type ArrayStack struct {
 }
 
 // Creates a new Stack with a constant size
-func NewArrayStack(size int32) *ArrayStack {
+func NewArrayStack(size int32) Stack {
 	return &ArrayStack{readerIndex: 0, array: make([]interface{}, size)} // This slice has a capacity of size
 }
 

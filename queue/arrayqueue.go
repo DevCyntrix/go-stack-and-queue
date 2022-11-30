@@ -17,7 +17,7 @@ var (
 	ErrArrayOutOfBound = errors.New("array is out of bound")
 )
 
-func NewArrayQueue(size int) *ArrayQueue {
+func NewArrayQueue(size int) Queue {
 	return &ArrayQueue{readerIndex: 0, writerIndex: 0, array: make([]interface{}, size)}
 }
 
