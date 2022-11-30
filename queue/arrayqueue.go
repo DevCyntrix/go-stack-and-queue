@@ -21,7 +21,6 @@ func NewArrayQueue(size int) *ArrayQueue {
 	return &ArrayQueue{readerIndex: 0, writerIndex: 0, array: make([]interface{}, size)}
 }
 
-// [1, 2, 3, 4] Array with a size of 4
 func (q *ArrayQueue) Inque(value interface{}) error {
 
 	if q.writerIndex >= q.Size() && (q.writerIndex%q.Size() == q.readerIndex%q.Size()) {
