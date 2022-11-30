@@ -13,7 +13,7 @@ func (q *SliceQueue) optimize() {
 	if q.readerIndex < 16 {
 		return
 	}
-	q.slice = q.slice[q.readerIndex:]
+	q.slice = q.slice[q.readerIndex:] // Maybe this won't reduce the size of the queue. (allocate and copy)
 	q.readerIndex = 0
 }
 
