@@ -1,3 +1,3 @@
-module github.com/DevCyntrix/go-arraystack
+module github.com/DevCyntrix/go-stack
 
 go 1.19
