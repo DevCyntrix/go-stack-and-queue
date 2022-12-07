@@ -17,7 +17,7 @@ func (q *SliceQueue) optimize() {
 	q.readerIndex = 0
 }
 
-func (q *SliceQueue) Inque(value interface{}) error {
+func (q *SliceQueue) Enque(value interface{}) error {
 	q.slice = append(q.slice, value)
 	return nil
 }

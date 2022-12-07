@@ -9,24 +9,24 @@ import (
 func Test(t *testing.T) {
 
 	q := queue.NewArrayQueue(4)
-	err := q.Inque("test")
+	err := q.Enque("test")
 	if err != nil {
 		t.Error(err)
 	}
-	err = q.Inque("test1")
+	err = q.Enque("test1")
 	if err != nil {
 		t.Error(err)
 	}
-	err = q.Inque("test2")
+	err = q.Enque("test2")
 	if err != nil {
 		t.Error(err)
 	}
-	err = q.Inque("test3")
+	err = q.Enque("test3")
 	if err != nil {
 		t.Error(err)
 	}
 
-	err = q.Inque("test4")
+	err = q.Enque("test4")
 	if err == nil {
 		t.Error("The array should overflow")
 	}

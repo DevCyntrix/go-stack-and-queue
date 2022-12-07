@@ -16,7 +16,7 @@ func NewLinkedQueue() Queue {
 	return &LinkedQueue{}
 }
 
-func (s *LinkedQueue) Inque(value interface{}) error {
+func (s *LinkedQueue) Enque(value interface{}) error {
 	element := new(LinkedElement)
 	element.value = value
 

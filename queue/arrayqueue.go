@@ -21,7 +21,7 @@ func NewArrayQueue(size int) Queue {
 	return &ArrayQueue{readerIndex: 0, writerIndex: 0, array: make([]interface{}, size)}
 }
 
-func (q *ArrayQueue) Inque(value interface{}) error {
+func (q *ArrayQueue) Enque(value interface{}) error {
 
 	if q.writerIndex >= q.Size() && (q.writerIndex%q.Size() == q.readerIndex%q.Size()) {
 		return ErrArrayOutOfBound
